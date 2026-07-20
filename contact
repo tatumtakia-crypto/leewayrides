@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leeway Rides | Contact Us, Book & FAQs</title>
+    <title>Leeway Rides | Contact Us, Book & Partnerships</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -25,8 +25,15 @@
         .contact-info-card { background: var(--secondary-purple); border: 1px solid rgba(243, 173, 33, 0.4); padding: 30px; border-radius: 12px; }
         .contact-info-card h3 { color: var(--accent-gold); margin-bottom: 15px; font-size: 1.3rem; }
         .contact-info-card p { margin-bottom: 10px; color: #ddd; font-size: 0.95rem; }
-        .booking-calendar-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 30px; border-radius: 15px; margin-bottom: 50px; text-align: center; }
-        .booking-calendar-box h3 { color: var(--light-gold); margin-bottom: 15px; font-size: 1.5rem; text-transform: uppercase; }
+        .booking-calendar-box, .lead-form-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 30px; border-radius: 15px; margin-bottom: 50px; }
+        .booking-calendar-box h3, .lead-form-box h3 { color: var(--light-gold); margin-bottom: 15px; font-size: 1.5rem; text-transform: uppercase; text-align: center; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-group label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 600; color: var(--light-gold); }
+        .form-group input, .form-group select, .form-group textarea { padding: 12px; border-radius: 6px; border: 1px solid rgba(243, 173, 33, 0.4); background: rgba(0, 0, 0, 0.3); color: #fff; font-size: 0.95rem; }
+        ul.styled-list { margin: 20px 0 20px 20px; color: #ddd; }
+        ul.styled-list li { margin-bottom: 8px; }
         .faq-section { margin-top: 60px; }
         .faq-section h2 { color: var(--accent-gold); text-align: center; margin-bottom: 30px; text-transform: uppercase; font-size: 2rem; }
         .faq-item { background: var(--secondary-purple); border: 1px solid rgba(243, 173, 33, 0.2); padding: 20px; border-radius: 10px; margin-bottom: 15px; }
@@ -34,7 +41,7 @@
         .faq-item p { color: #ccc; font-size: 0.9rem; margin-bottom: 0; }
         footer { background: #09000f; padding: 40px 5% 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; margin-top: 50px; }
         .copyright { font-size: 0.8rem; color: #777; }
-        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .contact-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .contact-grid, .form-grid { grid-template-columns: 1fr; } .form-group.full-width { grid-column: span 1; } }
     </style>
 </head>
 <body>
@@ -53,18 +60,17 @@
                 <li><a href="medical.html">Medical</a></li>
                 <li><a href="local.html">Local</a></li>
                 <li><a href="areas.html">Service Areas</a></li>
-                <li><a href="partners.html">Partnerships</a></li>
                 <li><a href="contact.html">Contact & Book</a></li>
             </ul>
         </nav>
         <a href="contact.html" class="btn-gold">Request Ride</a>
     </header>
     <main class="content-section">
-        <h1>Schedule & Contact Us</h1>
-        <p style="text-align: center; color: #ddd; margin-bottom: 40px;">Book your trip directly through our calendar below, or get in touch for custom inquiries.</p>
+        <h1>Schedule, Contact & Partnerships</h1>
+        <p style="text-align: center; color: #ddd; margin-bottom: 40px;">Book your trip through our calendar, submit a partnership inquiry, or reach out to our team.</p>
         
         <!-- Cal.com Inline Booking Embed Integration -->
-        <div class="booking-calendar-box">
+        <div class="booking-calendar-box" style="text-align: center;">
             <h3>Book Your Ride Online</h3>
             <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px;">Select your preferred time slot below to secure your ride reservation.</p>
             
@@ -102,6 +108,78 @@
                 <p style="color: #ffcf68;"><strong>Important:</strong> Leeway Rides provides non-emergency private transportation and is not an ambulance service or emergency medical provider.</p>
                 <p>If you or a passenger are experiencing a sudden medical emergency, please dial 911 immediately.</p>
             </div>
+        </div>
+
+        <!-- Partnership Section Integrated into Contact Page -->
+        <div class="lead-form-box">
+            <h3>Business & Referral Partnerships</h3>
+            <p style="color: #ddd; margin-bottom: 15px;">Leeway Rides collaborates with organizations, facilities, and corporations that require dependable, professional transportation solutions for clients, members, patients, residents, or employees.</p>
+            <ul class="styled-list">
+                <li>Hospitals, medical offices, oncology & dialysis centers</li>
+                <li>Rehabilitation facilities & assisted-living communities</li>
+                <li>Adult day programs, home-care agencies & group homes</li>
+                <li>Case-management organizations & behavioral-health providers</li>
+                <li>Churches, nonprofits, employers & corporate travel coordinators</li>
+            </ul>
+            <p style="color: var(--light-gold); font-weight: 600; margin-bottom: 20px;">Need dependable transportation for your clients, patients, residents, or employees? Complete the inquiry form below:</p>
+
+            <form action="mailto:Leewayridesnow@gmail.com" method="post" enctype="text/plain" class="form-grid">
+                <input type="hidden" name="Source" value="Partnership Page Inquiry on Contact Page">
+                <div class="form-group">
+                    <label>Organization Name *</label>
+                    <input type="text" name="OrgName" required placeholder="Organization Name">
+                </div>
+                <div class="form-group">
+                    <label>Contact Person *</label>
+                    <input type="text" name="ContactPerson" required placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <label>Job Title</label>
+                    <input type="text" name="JobTitle" placeholder="Title / Role">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" name="Phone" required placeholder="980-392-3216">
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="Email" required placeholder="example@organization.com">
+                </div>
+                <div class="form-group">
+                    <label>Type of Organization</label>
+                    <input type="text" name="OrgType" placeholder="Medical, Senior Living, Corporate...">
+                </div>
+                <div class="form-group">
+                    <label>Estimated Trip Frequency</label>
+                    <input type="text" name="Frequency" placeholder="Daily, Weekly, As needed...">
+                </div>
+                <div class="form-group">
+                    <label>Service Area / Location</label>
+                    <input type="text" name="ServiceArea" placeholder="Shelby, Charlotte, Gastonia...">
+                </div>
+                <div class="form-group">
+                    <label>Number of Passengers Typically Transported</label>
+                    <input type="text" name="PassengerVolume" placeholder="Approximate volume">
+                </div>
+                <div class="form-group">
+                    <label>Desired Start Date</label>
+                    <input type="text" name="StartDate" placeholder="Timeline">
+                </div>
+                <div class="form-group full-width">
+                    <label>Is Invoicing / Corporate Billing Needed?</label>
+                    <select name="InvoicingNeeded">
+                        <option value="Yes">Yes, require monthly or periodic invoicing</option>
+                        <option value="No">No / Flexible</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label>Additional Partnership Details</label>
+                    <textarea name="Notes" rows="3" placeholder="Share specific requirements or scope..."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <button type="submit" class="btn-gold" style="width: 100%; padding: 14px;">Submit Partnership Inquiry</button>
+                </div>
+            </form>
         </div>
 
         <div class="faq-section">

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leeway Rides | Contact Us, Book & FAQs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-purple: #1b022b; --secondary-purple: #2a0845; --accent-gold: #f3ad21; --light-gold: #ffcf68; --gold-gradient: linear-gradient(135deg, #f3ad21 0%, #ffcf68 50%, #c48206 100%); --text-light: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--primary-purple); color: var(--text-light); line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        .top-bar { background: #11011c; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; border-bottom: 1px solid rgba(243, 173, 33, 0.3); }
+        .top-bar a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
+        header { background: rgba(27, 2, 43, 0.95); padding: 15px 5%; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .logo-img { height: 40px; width: auto; }
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: var(--accent-gold); }
+        .btn-gold { background: var(--gold-gradient); color: var(--primary-purple); padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; border: none; cursor: pointer; display: inline-block; }
+        .content-section { padding: 60px 5%; max-width: 900px; margin: auto; }
+        .content-section h1 { font-size: 2.3rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; text-align: center; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; }
+        .contact-info-card { background: var(--secondary-purple); border: 1px solid rgba(243, 173, 33, 0.4); padding: 30px; border-radius: 12px; }
+        .contact-info-card h3 { color: var(--accent-gold); margin-bottom: 15px; font-size: 1.3rem; }
+        .contact-info-card p { margin-bottom: 10px; color: #ddd; font-size: 0.95rem; }
+        .booking-calendar-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 30px; border-radius: 15px; margin-bottom: 50px; text-align: center; }
+        .booking-calendar-box h3 { color: var(--light-gold); margin-bottom: 15px; font-size: 1.5rem; text-transform: uppercase; }
+        .faq-section { margin-top: 60px; }
+        .faq-section h2 { color: var(--accent-gold); text-align: center; margin-bottom: 30px; text-transform: uppercase; font-size: 2rem; }
+        .faq-item { background: var(--secondary-purple); border: 1px solid rgba(243, 173, 33, 0.2); padding: 20px; border-radius: 10px; margin-bottom: 15px; }
+        .faq-item h4 { color: var(--light-gold); margin-bottom: 8px; font-size: 1.1rem; }
+        .faq-item p { color: #ccc; font-size: 0.9rem; margin-bottom: 0; }
+        footer { background: #09000f; padding: 40px 5% 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; margin-top: 50px; }
+        .copyright { font-size: 0.8rem; color: #777; }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .contact-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div><i class="fa-solid fa-location-dot"></i> Contact Leeway Rides - Shelby, NC</div>
+        <div>Call/Text: <a href="sms:+19803923216">980-392-3216</a></div>
+    </div>
+    <header>
+        <a href="index.html">
+            <img src="7689.png" alt="Leeway Rides Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="airport.html">Airport</a></li>
+                <li><a href="medical.html">Medical</a></li>
+                <li><a href="local.html">Local</a></li>
+                <li><a href="areas.html">Service Areas</a></li>
+                <li><a href="partners.html">Partnerships</a></li>
+                <li><a href="contact.html">Contact & Book</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-gold">Request Ride</a>
+    </header>
+    <main class="content-section">
+        <h1>Schedule & Contact Us</h1>
+        <p style="text-align: center; color: #ddd; margin-bottom: 40px;">Book your trip directly through our calendar below, or get in touch for custom inquiries.</p>
+        
+        <!-- Cal.com Inline Booking Embed Integration -->
+        <div class="booking-calendar-box">
+            <h3>Book Your Ride Online</h3>
+            <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px;">Select your preferred time slot below to secure your ride reservation.</p>
+            
+            <!-- Cal inline embed code begins -->
+            <div style="width:100%;height:600px;overflow:scroll" id="my-cal-inline-30min"></div>
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "30min", {origin:"https://app.cal.com"});
+            Cal.config = Cal.config || {};
+            Cal.config.forwardQueryParams = true;
+
+              Cal.ns["30min"]("inline", {
+                elementOrSelector:"#my-cal-inline-30min",
+                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+                calLink: "leewayrides/30min",
+              });
+
+              Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+            </script>
+            <!-- Cal inline embed code ends -->
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h3>Direct Inquiries</h3>
+                <p><strong>Business Name:</strong> Leeway Rides</p>
+                <p><strong>Affiliated Network:</strong> LTS Connect Network</p>
+                <p><strong>Phone / Text:</strong> <a href="sms:+19803923216" style="color: var(--accent-gold);">980-392-3216</a></p>
+                <p><strong>Business Email:</strong> <a href="mailto:Leewayridesnow@gmail.com" style="color: var(--accent-gold);">Leewayridesnow@gmail.com</a>[cite: 1]</p>
+                <p><strong>Service Location:</strong> Based in Shelby, NC (Serving Cleveland County, Gastonia, Charlotte, Rock Hill, Spartanburg, and surrounding regional areas).</p>
+                <p><strong>Operating Hours:</strong> Transportation available 24 hours by advance reservation.</p>
+            </div>
+            <div class="contact-info-card">
+                <h3>Emergency Notice</h3>
+                <p style="color: #ffcf68;"><strong>Important:</strong> Leeway Rides provides non-emergency private transportation and is not an ambulance service or emergency medical provider.</p>
+                <p>If you or a passenger are experiencing a sudden medical emergency, please dial 911 immediately.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4>How do I request transportation?</h4>
+                <p>Complete our online booking calendar or contact Leeway Rides by phone or text. Please provide your pickup address, destination, date, time, passenger count, and trip type.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How far in advance should I schedule?</h4>
+                <p>Advance scheduling is strongly recommended. Same-day requests may be considered based on driver availability, but transportation is not guaranteed until confirmed.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is booking through the calendar a confirmed ride?</h4>
+                <p>Online bookings and requests are subject to confirmation and availability by our team.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you provide one-way and round-trip transportation?</h4>
+                <p>Yes. Customers may request one-way, round-trip, recurring, local, or out-of-town transportation.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you provide medical transportation?</h4>
+                <p>We provide scheduled, non-emergency transportation for ambulatory passengers traveling to medical appointments and healthcare facilities. We are not an ambulance or emergency medical service.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you provide transportation for seniors?</h4>
+                <p>Yes. We serve seniors who need dependable transportation to appointments, errands, family visits, senior programs, and other approved destinations.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can a family member or caregiver arrange transportation?</h4>
+                <p>Yes. A family member, caregiver, case manager, facility, or authorized representative may submit a request on behalf of the passenger.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I schedule recurring rides?</h4>
+                <p>Yes. Recurring transportation may be arranged for work, dialysis, therapy, medical appointments, senior programs, or other ongoing needs, subject to availability.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you provide airport transportation?</h4>
+                <p>Yes. Airport trips should be scheduled in advance. Customers should provide their airline, flight number, departure or arrival time, passenger count, and luggage details.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you provide out-of-town transportation?</h4>
+                <p>Yes, depending on availability. Long-distance and out-of-state trips require advance scheduling and a customized quote.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How is pricing determined?</h4>
+                <p>Pricing depends on mileage, pickup and drop-off locations, trip timing, number of stops, passenger needs, waiting requirements, and whether the trip is one way or round trip.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What happens if I need to cancel or reschedule?</h4>
+                <p>Customers should contact Leeway Rides as soon as possible. Cancellation or no-show charges may apply depending on timing and circumstances.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you accept emergency transportation requests?</h4>
+                <p>No. Leeway Rides does not provide emergency medical transportation. Call 911 for emergencies.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="copyright">&copy; 2026 Leeway Rides / LTS Connect Network. All Rights Reserved.</div>
+    </footer>
+</body>
+</html>

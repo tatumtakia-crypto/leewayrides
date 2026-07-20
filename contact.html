@@ -67,30 +67,71 @@
     </header>
     <main class="content-section">
         <h1>Schedule, Contact & Partnerships</h1>
-        <p style="text-align: center; color: #ddd; margin-bottom: 40px;">Book your trip through our calendar, submit a partnership inquiry, or reach out to our team.</p>
+        <p style="text-align: center; color: #ddd; margin-bottom: 40px;">Book your trip through our direct booking form, submit a partnership inquiry, or reach out to our team.</p>
         
-        <!-- Cal.com Inline Booking Embed Integration -->
-        <div class="booking-calendar-box" style="text-align: center;">
-            <h3>Book Your Ride Online</h3>
-            <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 20px;">Select your preferred time slot below to secure your ride reservation.</p>
+        <!-- Custom Direct Booking Form Replacing Cal Embed -->
+        <div class="booking-calendar-box">
+            <h3>Schedule Your Ride</h3>
+            <p style="color: #ccc; font-size: 0.9rem; text-align: center; margin-bottom: 20px;">Fill out your trip details below to submit your reservation directly to our team.</p>
             
-            <!-- Cal inline embed code begins -->
-            <div style="width:100%;height:600px;overflow:scroll" id="my-cal-inline-30min"></div>
-            <script type="text/javascript">
-              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-            Cal("init", "30min", {origin:"https://app.cal.com"});
-            Cal.config = Cal.config || {};
-            Cal.config.forwardQueryParams = true;
-
-              Cal.ns["30min"]("inline", {
-                elementOrSelector:"#my-cal-inline-30min",
-                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-                calLink: "leewayrides/30min",
-              });
-
-              Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-            </script>
-            <!-- Cal inline embed code ends -->
+            <form action="mailto:Leewayridesnow@gmail.com" method="post" enctype="text/plain" class="form-grid">
+                <input type="hidden" name="Source" value="Direct Booking Form on Contact Page">
+                <div class="form-group">
+                    <label>Passenger Name *</label>
+                    <input type="text" name="PassengerName" required placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" name="Phone" required placeholder="980-392-3216">
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="Email" required placeholder="example@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label>Service Type *</label>
+                    <select name="ServiceType" required>
+                        <option value="Airport Transfer">Airport Transfer (CLT / GSP)</option>
+                        <option value="Medical / Senior Care">Medical / Senior Care</option>
+                        <option value="Local / Out-of-Town">Local / Out-of-Town Trip</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Pickup Address *</label>
+                    <input type="text" name="PickupAddress" required placeholder="Street, City, Zip">
+                </div>
+                <div class="form-group">
+                    <label>Destination Address *</label>
+                    <input type="text" name="DestinationAddress" required placeholder="Street, City, Zip">
+                </div>
+                <div class="form-group">
+                    <label>Requested Date *</label>
+                    <input type="date" name="TripDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Requested Pickup Time *</label>
+                    <input type="time" name="TripTime" required>
+                </div>
+                <div class="form-group">
+                    <label>Trip Type</label>
+                    <select name="TripType">
+                        <option value="One-Way">One-Way</option>
+                        <option value="Round-Trip">Round-Trip</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Number of Passengers</label>
+                    <input type="number" name="Passengers" value="1" min="1">
+                </div>
+                <div class="form-group full-width">
+                    <label>Special Instructions & Notes</label>
+                    <textarea name="Notes" rows="3" placeholder="Luggage details, flight numbers, or special accommodations..."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <button type="submit" class="btn-gold" style="width: 100%; padding: 14px;">Submit Booking Request</button>
+                    <p style="font-size: 0.75rem; color: #aaa; text-align: center; margin-top: 10px;">Submitting this request alerts our team to confirm your reservation and schedule your trip.</p>
+                </div>
+            </form>
         </div>
 
         <div class="contact-grid">
@@ -99,7 +140,7 @@
                 <p><strong>Business Name:</strong> Leeway Rides</p>
                 <p><strong>Affiliated Network:</strong> LTS Connect Network</p>
                 <p><strong>Phone / Text:</strong> <a href="sms:+19803923216" style="color: var(--accent-gold);">980-392-3216</a></p>
-                <p><strong>Business Email:</strong> <a href="mailto:Leewayridesnow@gmail.com" style="color: var(--accent-gold);">Leewayridesnow@gmail.com</a>[cite: 1]</p>
+                <p><strong>Business Email:</strong> <a href="mailto:Leewayridesnow@gmail.com" style="color: var(--accent-gold);">Leewayridesnow@gmail.com</a></p>
                 <p><strong>Service Location:</strong> Based in Shelby, NC (Serving Cleveland County, Gastonia, Charlotte, Rock Hill, Spartanburg, and surrounding regional areas).</p>
                 <p><strong>Operating Hours:</strong> Transportation available 24 hours by advance reservation.</p>
             </div>

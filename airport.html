@@ -76,8 +76,10 @@
 
         <div class="lead-form-box">
             <h3>Airport Ride Request Form</h3>
-            <form action="mailto:Leewayridesnow@gmail.com" method="post" enctype="text/plain" class="form-grid">
+            <form action="https://api.web3forms.com/submit" method="POST" class="form-grid" id="airport-form">
+                <input type="hidden" name="access_key" value="a5f6de0a-7809-4119-b0e9-62eb6bcd4c28">
                 <input type="hidden" name="Source" value="Airport Page Request">
+                
                 <div class="form-group">
                     <label>Passenger's Full Name *</label>
                     <input type="text" name="Name" required placeholder="John Doe">
@@ -154,6 +156,7 @@
                 </div>
                 <div class="form-group full-width">
                     <button type="submit" class="btn-gold" style="width: 100%; padding: 14px;">Submit Airport Reservation Request</button>
+                    <div id="airport-form-result" style="margin-top: 10px; text-align: center; font-size: 0.9rem;"></div>
                     <p style="font-size: 0.75rem; color: #aaa; text-align: center; margin-top: 10px;">Submitting this request does not guarantee a booking until a Leeway Rides representative contacts you with confirmation.</p>
                 </div>
             </form>
@@ -162,5 +165,38 @@
     <footer>
         <div class="copyright">&copy; 2026 Leeway Rides / LTS Connect Network. All Rights Reserved.</div>
     </footer>
+
+    <!-- Web3Forms Submission Script -->
+    <script>
+        const airportForm = document.getElementById('airport-form');
+        const airportResult = document.getElementById('airport-form-result');
+
+        airportForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(airportForm);
+            airportResult.style.color = "var(--light-gold)";
+            airportResult.textContent = "Sending your airport reservation request...";
+
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    airportResult.style.color = "#4ade80";
+                    airportResult.textContent = "Thank you! Your airport ride request has been successfully sent.";
+                    airportForm.reset();
+                } else {
+                    airportResult.style.color = "#f87171";
+                    airportResult.textContent = json.message || "Something went wrong. Please try again.";
+                }
+            })
+            .catch(error => {
+                airportResult.style.color = "#f87171";
+                airportResult.textContent = "Network error! Please check your connection.";
+            });
+        });
+    </script>
 </body>
 </html>

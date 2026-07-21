@@ -1,149 +1,260 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Masterclass | Crown Access</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
-    <!-- Daily.co Native Video SDK -->
-    <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandDark: '#080808',
-                        brandCard: '#121212',
-                        brandBorder: '#222222',
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Leeway Rides | Home - Safe. Reliable. Connected.</title>
+    <!-- Google Search Console Verification Tag -->
+    <meta name="google-site-verification" content="FFGQ2qEpBzZg_6FXdU0qFgQJYBFzDxgKdCwPVpeLHiA">
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Leeway Rides provides safe, reliable non-emergency medical, senior, airport, and local private transportation in Shelby, NC and surrounding areas.">
+    <!-- Open Graph / Social Sharing Tags -->
+    <meta property="og:title" content="Leeway Rides | Home - Safe. Reliable. Connected.">
+    <meta property="og:description" content="Providing dependable private transportation for individuals, families, seniors, medical patients, airport travelers, and regional commuters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leewayrides.com/index.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .metallic-gold-text {
-            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .metallic-card-blue {
-            background: linear-gradient(145deg, #161616 0%, #0d0d0d 100%);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.15);
-        }
-        
-        /* Forces the video iframe to fill its container beautifully */
-        #video-container iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 1rem;
-            border: none;
-        }
+        :root { --primary-purple: #1b022b; --secondary-purple: #2a0845; --accent-gold: #f3ad21; --light-gold: #ffcf68; --gold-gradient: linear-gradient(135deg, #f3ad21 0%, #ffcf68 50%, #c48206 100%); --text-light: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--primary-purple); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        .top-bar { background: #11011c; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; border-bottom: 1px solid rgba(243, 173, 33, 0.3); flex-wrap: wrap; gap: 10px; }
+        .top-bar-links { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+        .top-bar a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
+        header { background: rgba(27, 2, 43, 0.95); padding: 15px 5%; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .logo-img { height: 50px; width: auto; }
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: var(--accent-gold); }
+        .btn-gold { background: var(--gold-gradient); color: var(--primary-purple); padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; border: none; cursor: pointer; display: inline-block; }
+        .hero { padding: 60px 5%; background: radial-gradient(circle at center, var(--secondary-purple) 0%, var(--primary-purple) 100%); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: 75vh; width: 100%; box-sizing: border-box; }
+        .hero-content h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 15px; text-transform: uppercase; word-break: break-word; }
+        .hero-subtitle { font-size: 1.1rem; color: var(--accent-gold); letter-spacing: 2px; margin-bottom: 15px; font-weight: 700; text-transform: uppercase; }
+        .hero-content p { color: #ddd; margin-bottom: 25px; font-size: 1.05rem; }
+        .hero-ctas { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+        .phone-cta { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; border: 2px solid var(--accent-gold); padding: 8px 18px; border-radius: 30px; }
+        .whatsapp-cta { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; border: 2px solid #25d366; background: rgba(37, 211, 102, 0.1); padding: 8px 18px; border-radius: 30px; }
+        .whatsapp-cta:hover { background: rgba(37, 211, 102, 0.2); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 40px; width: 100%; }
+        .service-card { background: var(--secondary-purple); border: 1px solid rgba(243, 173, 33, 0.3); border-radius: 12px; padding: 30px 20px; text-decoration: none; color: inherit; display: block; transition: 0.3s; box-sizing: border-box; }
+        .service-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+        .service-card i { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; }
+        .content-section { padding: 70px 5%; max-width: 1000px; margin: auto; width: 100%; box-sizing: border-box; }
+        .content-section h2 { font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 20px; text-align: center; text-transform: uppercase; word-break: break-word; }
+        .content-section p { margin-bottom: 20px; font-size: 1rem; color: #ddd; }
+        .quote-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 40px; border-radius: 15px; margin-top: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; overflow: hidden; }
+        .quote-box h3 { color: var(--light-gold); margin-bottom: 15px; font-size: 1.8rem; text-transform: uppercase; text-align: center; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; width: 100%; }
+        .form-group { display: flex; flex-direction: column; min-width: 0; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-group label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 600; color: var(--light-gold); word-break: break-word; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; max-width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgba(243, 173, 33, 0.4); background: rgba(0, 0, 0, 0.3); color: #fff; font-size: 0.95rem; box-sizing: border-box; }
+        footer { background: #09000f; padding: 40px 5% 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
+        .copyright { font-size: 0.8rem; color: #777; margin-top: 15px; }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .hero { grid-template-columns: 1fr; text-align: center; } .hero-ctas { justify-content: center; } .form-grid { grid-template-columns: 1fr; } .form-group.full-width { grid-column: span 1; } .quote-box { padding: 20px; } }
     </style>
+    <!-- Local Business Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Leeway Rides",
+      "image": "https://leewayrides.com/7689.png",
+      "@id": "https://leewayrides.com",
+      "url": "https://leewayrides.com",
+      "telephone": "+12053836124",
+      "email": "Leewayridesnow@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Shelby",
+        "addressRegion": "NC",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.2917,
+        "longitude": -81.5438
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 </head>
-<body class="bg-brandDark text-gray-100 font-sans antialiased h-screen flex flex-col overflow-hidden">
-
-    <!-- Header -->
-    <header class="border-b border-gray-800/80 bg-brandDark/95 backdrop-blur-md shrink-0">
-        <div class="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <div>
-                    <span class="block text-[10px] uppercase tracking-widest metallic-gold-text font-bold">Live Environment</span>
-                    <span class="text-lg font-black tracking-tight text-white drop-shadow">Carrier Attraction Masterclass</span>
-                </div>
-            </div>
-            <div class="flex items-center space-x-6">
-                <a href="portal.html" class="text-sm font-semibold text-gray-400 hover:text-white transition">&larr; Back to Dashboard</a>
-            </div>
+<body>
+    <div class="top-bar">
+        <div><i class="fa-solid fa-location-dot"></i> Serving Shelby, Cleveland County & Surrounding Areas</div>
+        <div class="top-bar-links">
+            <span>Call/Text: <a href="sms:+12053836124">205-383-6124</a></span>
+            <span>|</span>
+            <a href="https://wa.me/12053836124?text=Hi,%20I'm%20interested%20in%20scheduling%20a%20ride." target="_blank"><i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> WhatsApp</a>
         </div>
-    </header>
-
-    <!-- Main Live Room Area -->
-    <main class="flex-grow flex p-6 max-w-[1400px] mx-auto w-full gap-6">
-        
-        <!-- Left Side: Native Video Player -->
-        <div class="flex-grow metallic-card-blue rounded-2xl flex flex-col overflow-hidden relative">
-            <div id="video-container" class="w-full h-full bg-black relative z-10 flex items-center justify-center">
-                <!-- Video will inject here automatically -->
-                <p id="loading-video-text" class="text-gray-500 animate-pulse font-mono text-sm">Initializing Secure Stream...</p>
-            </div>
-        </div>
-
-        <!-- Right Side: Class Resources / Notes (Optional sidebar) -->
-        <div class="w-80 shrink-0 border border-gray-800 bg-[#121212] rounded-2xl p-6 flex flex-col hidden lg:flex">
-            <h3 class="text-white font-bold text-lg mb-4 border-b border-gray-800 pb-2">Session Resources</h3>
-            <ul class="space-y-4 text-sm text-gray-400">
-                <li class="flex items-start space-x-3">
-                    <span class="text-blue-500">📄</span>
-                    <a href="#" class="hover:text-blue-400 transition">Carrier Pitch Script PDF</a>
-                </li>
-                <li class="flex items-start space-x-3">
-                    <span class="text-blue-500">📊</span>
-                    <a href="#" class="hover:text-blue-400 transition">Market Rate Calculator</a>
-                </li>
-                <li class="flex items-start space-x-3">
-                    <span class="text-blue-500">📝</span>
-                    <a href="#" class="hover:text-blue-400 transition">Compliance Checklist</a>
-                </li>
+    </div>
+    <header>
+        <a href="index.html">
+            <img src="7689.png" alt="Leeway Rides Logo - Private Transportation Shelby NC" class="logo-img" width="150" height="50">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="airport.html">Airport</a></li>
+                <li><a href="medical.html">Medical</a></li>
+                <li><a href="local.html">Local</a></li>
+                <li><a href="areas.html">Service Areas</a></li>
+                <li><a href="contact.html">Contact & Book</a></li>
             </ul>
+        </nav>
+        <a href="contact.html" class="btn-gold">Request a Ride</a>
+    </header>
+    <main role="main">
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">Safe. Reliable. Connected.</div>
+            <h1>LEEWAY <span>RIDES</span></h1>
+            <p>One Vision. One Mission. One Family. Providing dependable private transportation for individuals, families, seniors, medical patients, airport travelers, and regional commuters.</p>
+            <div class="hero-ctas">
+                <a href="contact.html" class="btn-gold">Schedule Transportation</a>
+                <a href="tel:2053836124" class="phone-cta"><i class="fa-solid fa-phone"></i> Call</a>
+                <a href="https://wa.me/12053836124?text=Hi,%20I'm%20interested%20in%20scheduling%20a%20ride." target="_blank" class="whatsapp-cta"><i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> WhatsApp</a>
+            </div>
         </div>
+        <div style="text-align: center;">
+            <img src="7689.png" alt="Leeway Rides Logo Emblem" width="300" height="300" style="max-width: 80%; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));">
+        </div>
+    </section>
+    <section class="content-section">
+        <h2>Why Choose Leeway Rides</h2>
+        <p>Leeway Rides was created to provide dependable transportation with a personal touch. We understand that every trip matters—whether a passenger is traveling to a medical appointment, catching a flight, reporting to work, visiting family, or traveling out of town. Our goal is to provide professional communication, respectful service, and reliable transportation that gives clients and families greater peace of mind.</p>
+        
+        <h2 style="margin-top: 60px;">Our Services</h2>
+        <div class="services-grid">
+            <a href="airport.html" class="service-card">
+                <i class="fa-solid fa-plane-departure"></i>
+                <h3>Airport Transfers</h3>
+                <p>Scheduled airport transportation for CLT, GSP, and regional travel.</p>
+            </a>
+            <a href="medical.html" class="service-card">
+                <i class="fa-solid fa-notes-medical"></i>
+                <h3>Medical & Senior Care</h3>
+                <p>Non-emergency medical and senior ambulatory transportation.</p>
+            </a>
+            <a href="local.html" class="service-card">
+                <i class="fa-solid fa-location-arrow"></i>
+                <h3>Local & Out-of-Town</h3>
+                <p>Prearranged city trips, errands, and long-distance transfers.</p>
+            </a>
+            <a href="contact.html" class="service-card">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Partnerships</h3>
+                <p>Custom transit arrangements for facilities, organizations, and employers.</p>
+            </a>
+        </div>
+
+        <!-- Quick Quote Form Powered by Web3Forms -->
+        <div class="quote-box">
+            <h3>Quick Quote Request</h3>
+            <p style="text-align: center; color: #ccc; font-size: 0.95rem; margin-bottom: 10px;">Need a fast estimate? Fill out the short form below and our team will get back to you promptly.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="form-grid" id="quick-quote-form">
+                <input type="hidden" name="access_key" value="a5f6de0a-7809-4119-b0e9-62eb6bcd4c28">
+                <input type="hidden" name="Source" value="Quick Quote Form on Home Page">
+                
+                <div class="form-group">
+                    <label for="customer-name-input">Your Name *</label>
+                    <input type="text" id="customer-name-input" name="CustomerName" required placeholder="Full Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone-input">Phone Number *</label>
+                    <input type="tel" id="phone-input" name="Phone" required placeholder="205-383-6124">
+                </div>
+                
+                <div class="form-group">
+                    <label for="pickup-location-input">Pickup City / Location *</label>
+                    <input type="text" id="pickup-location-input" name="PickupLocation" required placeholder="City or Address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="destination-location-input">Destination City / Location *</label>
+                    <input type="text" id="destination-location-input" name="DestinationLocation" required placeholder="City or Address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service-needed-select">Service Type *</label>
+                    <select id="service-needed-select" name="ServiceNeeded" required>
+                        <option value="Airport Transfer">Airport Transfer</option>
+                        <option value="Medical / Senior Care">Medical / Senior Care</option>
+                        <option value="Local / Out-of-Town">Local / Out-of-Town</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="trip-date-input">Estimated Date</label>
+                    <input type="date" id="trip-date-input" name="TripDate">
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="trip-details-textarea">Brief Trip Details / Questions</label>
+                    <textarea id="trip-details-textarea" name="TripDetails" rows="2" placeholder="One-way or round trip, passenger count, special notes..."></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <button type="submit" class="btn-gold" style="width: 100%; padding: 14px;">Get Fast Quote</button>
+                    <div id="quote-form-result" style="margin-top: 10px; text-align: center; font-size: 0.9rem;"></div>
+                </div>
+            </form>
+        </div>
+    </section>
     </main>
+    <footer>
+        <div class="copyright">&copy; 2026 Leeway Rides / LTS Connect Network. All Rights Reserved. Available by advance reservation.</div>
+    </footer>
 
-    <!-- Security & Video Scripts -->
+    <!-- Web3Forms Submission Script for Quick Quote -->
     <script>
-        const SUPABASE_URL = 'https://thzbqlumohwlxgbodopf.supabase.co';
-        const SUPABASE_KEY = 'sb_publishable_KmHtN8HHbMOg6P0HetqaFw_uYgz8NN8';
-        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        const quoteForm = document.getElementById('quick-quote-form');
+        const quoteResult = document.getElementById('quote-form-result');
 
-        window.onload = async function() {
-            // 1. Check if user is allowed to be here
-            const { data, error } = await supabaseClient.auth.getSession();
-            if (error || !data.session) {
-                window.location.replace('login.html');
-                return;
-            }
+        quoteForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(quoteForm);
+            quoteResult.style.color = "var(--light-gold)";
+            quoteResult.textContent = "Sending your quote request...";
 
-            // 2. Initialize the Native Video Player
-            // REPLACE THIS URL with your free Daily.co room URL later
-            const ROOM_URL = 'https://your-domain.daily.co/crown-access-live'; 
-
-            const videoContainer = document.getElementById('video-container');
-            const loadingText = document.getElementById('loading-video-text');
-
-            try {
-                const callFrame = window.DailyIframe.createFrame(videoContainer, {
-                    iframeStyle: {
-                        width: '100%',
-                        height: '100%',
-                        border: '0',
-                        borderRadius: '16px'
-                    },
-                    showLeaveButton: true,
-                    theme: {
-                        colors: {
-                            accent: '#2563eb', // Matches your blue theme
-                            accentText: '#ffffff',
-                            background: '#000000', // Matches dark theme
-                            backgroundAccent: '#121212',
-                            baseText: '#ffffff',
-                            border: '#222222',
-                        }
-                    }
-                });
-
-                await callFrame.join({ url: ROOM_URL });
-                loadingText.style.display = 'none'; // Hide loading text once connected
-
-            } catch (err) {
-                console.error("Video failed to load:", err);
-                loadingText.textContent = "Error loading live stream. Please refresh.";
-                loadingText.classList.remove('animate-pulse');
-                loadingText.classList.add('text-red-500');
-            }
-        };
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    quoteResult.style.color = "#4ade80";
+                    quoteResult.textContent = "Thank you! Your quote request has been sent successfully.";
+                    quoteForm.reset();
+                } else {
+                    quoteResult.style.color = "#f87171";
+                    quoteResult.textContent = json.message || "Something went wrong. Please try again.";
+                }
+            })
+            .catch(error => {
+                quoteResult.style.color = "#f87171";
+                quoteResult.textContent = "Network error! Please check your connection.";
+            });
+        });
     </script>
 </body>
 </html>

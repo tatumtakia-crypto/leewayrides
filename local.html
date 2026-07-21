@@ -9,7 +9,7 @@
     <style>
         :root { --primary-purple: #1b022b; --secondary-purple: #2a0845; --accent-gold: #f3ad21; --light-gold: #ffcf68; --gold-gradient: linear-gradient(135deg, #f3ad21 0%, #ffcf68 50%, #c48206 100%); --text-light: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--primary-purple); color: var(--text-light); line-height: 1.6; }
+        body { background-color: var(--primary-purple); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
         .top-bar { background: #11011c; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; border-bottom: 1px solid rgba(243, 173, 33, 0.3); }
         .top-bar a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
@@ -19,23 +19,23 @@
         nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
         nav a:hover { color: var(--accent-gold); }
         .btn-gold { background: var(--gold-gradient); color: var(--primary-purple); padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; border: none; cursor: pointer; display: inline-block; }
-        .content-section { padding: 60px 5%; max-width: 900px; margin: auto; }
+        .content-section { padding: 60px 5%; max-width: 900px; margin: auto; width: 100%; }
         .content-section h1 { font-size: 2.3rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; text-align: center; }
         .content-section p { margin-bottom: 20px; color: #ddd; }
         .pricing-box { background: rgba(243, 173, 33, 0.08); border: 1px solid var(--accent-gold); padding: 20px; border-radius: 10px; margin: 25px 0; text-align: center; }
         .pricing-box p { color: #ffcf68; font-weight: 600; margin-bottom: 0; }
         ul.styled-list { margin: 20px 0 30px 20px; color: #ddd; }
         ul.styled-list li { margin-bottom: 10px; }
-        .lead-form-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 40px; border-radius: 15px; margin-top: 40px; }
+        .lead-form-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 40px; border-radius: 15px; margin-top: 40px; width: 100%; box-sizing: border-box; overflow: hidden; }
         .lead-form-box h3 { color: var(--light-gold); margin-bottom: 20px; text-align: center; font-size: 1.5rem; text-transform: uppercase; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { display: flex; flex-direction: column; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+        .form-group { display: flex; flex-direction: column; min-width: 0; }
         .form-group.full-width { grid-column: span 2; }
-        .form-group label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 600; color: var(--light-gold); }
-        .form-group input, .form-group select, .form-group textarea { padding: 12px; border-radius: 6px; border: 1px solid rgba(243, 173, 33, 0.4); background: rgba(0, 0, 0, 0.3); color: #fff; font-size: 0.95rem; }
+        .form-group label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 600; color: var(--light-gold); word-break: break-word; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; max-width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgba(243, 173, 33, 0.4); background: rgba(0, 0, 0, 0.3); color: #fff; font-size: 0.95rem; box-sizing: border-box; }
         footer { background: #09000f; padding: 40px 5% 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; margin-top: 50px; }
         .copyright { font-size: 0.8rem; color: #777; }
-        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .form-grid { grid-template-columns: 1fr; } .form-group.full-width { grid-column: span 1; } }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .form-grid { grid-template-columns: 1fr; } .form-group.full-width { grid-column: span 1; } .lead-form-box { padding: 20px; } }
     </style>
 </head>
 <body>
@@ -80,8 +80,10 @@
 
         <div class="lead-form-box">
             <h3>Local & Out-of-Town Quote Request</h3>
-            <form action="mailto:Leewayridesnow@gmail.com" method="post" enctype="text/plain" class="form-grid">
+            <form action="https://api.web3forms.com/submit" method="POST" class="form-grid" id="local-form">
+                <input type="hidden" name="access_key" value="a5f6de0a-7809-4119-b0e9-62eb6bcd4c28">
                 <input type="hidden" name="Source" value="Local Page Request">
+                
                 <div class="form-group">
                     <label>Customer Name *</label>
                     <input type="text" name="Name" required placeholder="Full Name">
@@ -112,11 +114,11 @@
                 </div>
                 <div class="form-group">
                     <label>Requested Date *</label>
-                    <input type="text" name="Date" required placeholder="MM/DD/YYYY">
+                    <input type="date" name="Date" required>
                 </div>
                 <div class="form-group">
                     <label>Requested Pickup Time *</label>
-                    <input type="text" name="Time" required placeholder="Time">
+                    <input type="time" name="Time" required>
                 </div>
                 <div class="form-group">
                     <label>Trip Type</label>
@@ -154,6 +156,7 @@
                 </div>
                 <div class="form-group full-width">
                     <button type="submit" class="btn-gold" style="width: 100%; padding: 14px;">Submit Quote Request</button>
+                    <div id="local-form-result" style="margin-top: 10px; text-align: center; font-size: 0.9rem;"></div>
                     <p style="font-size: 0.75rem; color: #aaa; text-align: center; margin-top: 10px;">Submitting this request does not guarantee a booking until a Leeway Rides representative contacts you with confirmation.</p>
                 </div>
             </form>
@@ -162,5 +165,38 @@
     <footer>
         <div class="copyright">&copy; 2026 Leeway Rides / LTS Connect Network. All Rights Reserved.</div>
     </footer>
+
+    <!-- Web3Forms Submission Script for Local Page -->
+    <script>
+        const localForm = document.getElementById('local-form');
+        const localResult = document.getElementById('local-form-result');
+
+        localForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(localForm);
+            localResult.style.color = "var(--light-gold)";
+            localResult.textContent = "Submitting quote request...";
+
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    localResult.style.color = "#4ade80";
+                    localResult.textContent = "Thank you! Your quote request has been sent successfully.";
+                    localForm.reset();
+                } else {
+                    localResult.style.color = "#f87171";
+                    localResult.textContent = json.message || "Something went wrong. Please try again.";
+                }
+            })
+            .catch(error => {
+                localResult.style.color = "#f87171";
+                localResult.textContent = "Network error! Please check your connection.";
+            });
+        });
+    </script>
 </body>
 </html>

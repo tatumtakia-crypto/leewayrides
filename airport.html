@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leeway Rides | Airport Transportation (CLT & GSP)</title>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Leeway Rides provides safe, reliable airport transportation to and from CLT, GSP, and regional hubs for individuals, families, and business travelers in Shelby, NC.">
+    <!-- Open Graph / Social Sharing Tags -->
+    <meta property="og:title" content="Leeway Rides | Airport Transportation (CLT & GSP)">
+    <meta property="og:description" content="Scheduled airport transportation for Charlotte Douglas, GSP, and regional hubs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leewayrides.com/airport.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary-purple: #1b022b; --secondary-purple: #2a0845; --accent-gold: #f3ad21; --light-gold: #ffcf68; --gold-gradient: linear-gradient(135deg, #f3ad21 0%, #ffcf68 50%, #c48206 100%); --text-light: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--primary-purple); color: var(--text-light); line-height: 1.6; }
+        body { background-color: var(--primary-purple); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
         .top-bar { background: #11011c; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; border-bottom: 1px solid rgba(243, 173, 33, 0.3); }
         .top-bar a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
@@ -19,21 +26,21 @@
         nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
         nav a:hover { color: var(--accent-gold); }
         .btn-gold { background: var(--gold-gradient); color: var(--primary-purple); padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; border: none; cursor: pointer; display: inline-block; }
-        .content-section { padding: 60px 5%; max-width: 900px; margin: auto; }
+        .content-section { padding: 60px 5%; max-width: 900px; margin: auto; width: 100%; }
         .content-section h1 { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; text-transform: uppercase; text-align: center; }
         .content-section p { margin-bottom: 20px; color: #ddd; }
         ul.styled-list { margin: 20px 0 30px 20px; color: #ddd; }
         ul.styled-list li { margin-bottom: 10px; }
-        .lead-form-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 40px; border-radius: 15px; margin-top: 40px; }
+        .lead-form-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 40px; border-radius: 15px; margin-top: 40px; width: 100%; box-sizing: border-box; overflow: hidden; }
         .lead-form-box h3 { color: var(--light-gold); margin-bottom: 20px; text-align: center; font-size: 1.5rem; text-transform: uppercase; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { display: flex; flex-direction: column; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+        .form-group { display: flex; flex-direction: column; min-width: 0; }
         .form-group.full-width { grid-column: span 2; }
-        .form-group label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 600; color: var(--light-gold); }
-        .form-group input, .form-group select, .form-group textarea { padding: 12px; border-radius: 6px; border: 1px solid rgba(243, 173, 33, 0.4); background: rgba(0, 0, 0, 0.3); color: #fff; font-size: 0.95rem; }
+        .form-group label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 600; color: var(--light-gold); word-break: break-word; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; max-width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgba(243, 173, 33, 0.4); background: rgba(0, 0, 0, 0.3); color: #fff; font-size: 0.95rem; box-sizing: border-box; }
         footer { background: #09000f; padding: 40px 5% 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; margin-top: 50px; }
         .copyright { font-size: 0.8rem; color: #777; }
-        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .form-grid { grid-template-columns: 1fr; } .form-group.full-width { grid-column: span 1; } }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .form-grid { grid-template-columns: 1fr; } .form-group.full-width { grid-column: span 1; } .lead-form-box { padding: 20px; } }
     </style>
 </head>
 <body>

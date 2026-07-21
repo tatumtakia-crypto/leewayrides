@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leeway Rides | Home - Safe. Reliable. Connected.</title>
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Leeway Rides provides safe, reliable non-emergency medical, senior, airport, and local private transportation in Shelby, NC and surrounding areas.">
+    <!-- Open Graph / Social Sharing Tags -->
+    <meta property="og:title" content="Leeway Rides | Home - Safe. Reliable. Connected.">
+    <meta property="og:description" content="Providing dependable private transportation for individuals, families, seniors, medical patients, airport travelers, and regional commuters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leewayrides.com/index.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary-purple: #1b022b; --secondary-purple: #2a0845; --accent-gold: #f3ad21; --light-gold: #ffcf68; --gold-gradient: linear-gradient(135deg, #f3ad21 0%, #ffcf68 50%, #c48206 100%); --text-light: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--primary-purple); color: var(--text-light); line-height: 1.6; }
+        body { background-color: var(--primary-purple); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
         .top-bar { background: #11011c; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; border-bottom: 1px solid rgba(243, 173, 33, 0.3); }
         .top-bar a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
@@ -19,30 +26,69 @@
         nav a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
         nav a:hover { color: var(--accent-gold); }
         .btn-gold { background: var(--gold-gradient); color: var(--primary-purple); padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; border: none; cursor: pointer; display: inline-block; }
-        .hero { padding: 60px 5%; background: radial-gradient(circle at center, var(--secondary-purple) 0%, var(--primary-purple) 100%); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: 75vh; }
-        .hero-content h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 15px; text-transform: uppercase; }
+        .hero { padding: 60px 5%; background: radial-gradient(circle at center, var(--secondary-purple) 0%, var(--primary-purple) 100%); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: 75vh; width: 100%; box-sizing: border-box; }
+        .hero-content h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 15px; text-transform: uppercase; word-break: break-word; }
         .hero-subtitle { font-size: 1.1rem; color: var(--accent-gold); letter-spacing: 2px; margin-bottom: 15px; font-weight: 700; text-transform: uppercase; }
         .hero-content p { color: #ddd; margin-bottom: 25px; font-size: 1.05rem; }
         .hero-ctas { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
         .phone-cta { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; border: 2px solid var(--accent-gold); padding: 8px 18px; border-radius: 30px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 40px; }
-        .service-card { background: var(--secondary-purple); border: 1px solid rgba(243, 173, 33, 0.3); border-radius: 12px; padding: 30px 20px; text-decoration: none; color: inherit; display: block; transition: 0.3s; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 40px; width: 100%; }
+        .service-card { background: var(--secondary-purple); border: 1px solid rgba(243, 173, 33, 0.3); border-radius: 12px; padding: 30px 20px; text-decoration: none; color: inherit; display: block; transition: 0.3s; box-sizing: border-box; }
         .service-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
         .service-card i { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; }
-        .content-section { padding: 70px 5%; max-width: 1000px; margin: auto; }
-        .content-section h2 { font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 20px; text-align: center; text-transform: uppercase; }
+        .content-section { padding: 70px 5%; max-width: 1000px; margin: auto; width: 100%; box-sizing: border-box; }
+        .content-section h2 { font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 20px; text-align: center; text-transform: uppercase; word-break: break-word; }
         .content-section p { margin-bottom: 20px; font-size: 1rem; color: #ddd; }
-        .quote-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 40px; border-radius: 15px; margin-top: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .quote-box { background: var(--secondary-purple); border: 2px solid var(--accent-gold); padding: 40px; border-radius: 15px; margin-top: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 100%; box-sizing: border-box; overflow: hidden; }
         .quote-box h3 { color: var(--light-gold); margin-bottom: 15px; font-size: 1.8rem; text-transform: uppercase; text-align: center; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-        .form-group { display: flex; flex-direction: column; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; width: 100%; }
+        .form-group { display: flex; flex-direction: column; min-width: 0; }
         .form-group.full-width { grid-column: span 2; }
-        .form-group label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 600; color: var(--light-gold); }
-        .form-group input, .form-group select, .form-group textarea { padding: 12px; border-radius: 6px; border: 1px solid rgba(243, 173, 33, 0.4); background: rgba(0, 0, 0, 0.3); color: #fff; font-size: 0.95rem; }
+        .form-group label { margin-bottom: 6px; font-size: 0.9rem; font-weight: 600; color: var(--light-gold); word-break: break-word; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; max-width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgba(243, 173, 33, 0.4); background: rgba(0, 0, 0, 0.3); color: #fff; font-size: 0.95rem; box-sizing: border-box; }
         footer { background: #09000f; padding: 40px 5% 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
         .copyright { font-size: 0.8rem; color: #777; margin-top: 15px; }
-        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .hero { grid-template-columns: 1fr; text-align: center; } .hero-ctas { justify-content: center; } .form-grid { grid-template-columns: 1fr; } .form-group.full-width { grid-column: span 1; } }
+        @media (max-width: 768px) { header { flex-direction: column; gap: 15px; } .hero { grid-template-columns: 1fr; text-align: center; } .hero-ctas { justify-content: center; } .form-grid { grid-template-columns: 1fr; } .form-group.full-width { grid-column: span 1; } .quote-box { padding: 20px; } }
     </style>
+    <!-- Local Business Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Leeway Rides",
+      "image": "https://leewayrides.com/7689.png",
+      "@id": "https://leewayrides.com",
+      "url": "https://leewayrides.com",
+      "telephone": "+19803923216",
+      "email": "Leewayridesnow@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Shelby",
+        "addressRegion": "NC",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.2917,
+        "longitude": -81.5438
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 </head>
 <body>
     <div class="top-bar">
@@ -51,7 +97,7 @@
     </div>
     <header>
         <a href="index.html">
-            <img src="7689.png" alt="Leeway Rides Logo" class="logo-img">
+            <img src="7689.png" alt="Leeway Rides Logo - Private Transportation Shelby NC" class="logo-img">
         </a>
         <nav>
             <ul>

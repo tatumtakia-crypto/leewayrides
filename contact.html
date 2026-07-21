@@ -69,64 +69,99 @@
         <h1>Schedule, Contact & Partnerships</h1>
         <p style="text-align: center; color: #ddd; margin-bottom: 40px;">Book your trip through our direct booking form, submit a partnership inquiry, or reach out to our team.</p>
         
-        <!-- Custom Direct Booking Form Replacing Cal Embed -->
+        <!-- Custom Direct Booking Form Updated with Complete Requirements -->
         <div class="booking-calendar-box">
             <h3>Schedule Your Ride</h3>
             <p style="color: #ccc; font-size: 0.9rem; text-align: center; margin-bottom: 20px;">Fill out your trip details below to submit your reservation directly to our team.</p>
             
             <form action="mailto:Leewayridesnow@gmail.com" method="post" enctype="text/plain" class="form-grid">
                 <input type="hidden" name="Source" value="Direct Booking Form on Contact Page">
+                
                 <div class="form-group">
-                    <label>Passenger Name *</label>
-                    <input type="text" name="PassengerName" required placeholder="Full Name">
+                    <label>Customer Name *</label>
+                    <input type="text" name="CustomerName" required placeholder="Full Name">
                 </div>
+                
                 <div class="form-group">
                     <label>Phone Number *</label>
                     <input type="tel" name="Phone" required placeholder="980-392-3216">
                 </div>
+                
                 <div class="form-group">
                     <label>Email Address *</label>
                     <input type="email" name="Email" required placeholder="example@gmail.com">
                 </div>
+
                 <div class="form-group">
-                    <label>Service Type *</label>
-                    <select name="ServiceType" required>
-                        <option value="Airport Transfer">Airport Transfer (CLT / GSP)</option>
-                        <option value="Medical / Senior Care">Medical / Senior Care</option>
-                        <option value="Local / Out-of-Town">Local / Out-of-Town Trip</option>
+                    <label>Preferred Contact Method *</label>
+                    <select name="PreferredContactMethod" required>
+                        <option value="Phone Call">Phone Call</option>
+                        <option value="Text Message">Text Message</option>
+                        <option value="Email">Email</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
                     <label>Pickup Address *</label>
                     <input type="text" name="PickupAddress" required placeholder="Street, City, Zip">
                 </div>
+                
                 <div class="form-group">
-                    <label>Destination Address *</label>
-                    <input type="text" name="DestinationAddress" required placeholder="Street, City, Zip">
+                    <label>Drop-off Address *</label>
+                    <input type="text" name="DropoffAddress" required placeholder="Street, City, Zip">
                 </div>
+                
                 <div class="form-group">
                     <label>Requested Date *</label>
-                    <input type="date" name="TripDate" required>
+                    <input type="date" name="RequestedDate" required>
                 </div>
+                
                 <div class="form-group">
                     <label>Requested Pickup Time *</label>
-                    <input type="time" name="TripTime" required>
+                    <input type="time" name="RequestedPickupTime" required>
                 </div>
+                
                 <div class="form-group">
-                    <label>Trip Type</label>
-                    <select name="TripType">
+                    <label>One-way or Round Trip *</label>
+                    <select name="TripType" required>
                         <option value="One-Way">One-Way</option>
                         <option value="Round-Trip">Round-Trip</option>
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label>Number of Passengers</label>
-                    <input type="number" name="Passengers" value="1" min="1">
+                    <label>Return Time (If Round Trip / Known)</label>
+                    <input type="text" name="ReturnTime" placeholder="e.g. 3:30 PM or N/A">
                 </div>
+                
+                <div class="form-group">
+                    <label>Number of Passengers *</label>
+                    <input type="number" name="Passengers" value="1" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Trip Schedule Type *</label>
+                    <select name="ScheduleType" required>
+                        <option value="One-Time">One-Time Trip</option>
+                        <option value="Recurring">Recurring Trip</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Reason for Transportation *</label>
+                    <input type="text" name="ReasonForTransportation" required placeholder="Work, Medical appointment, Airport, Errands...">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Additional Stops</label>
+                    <input type="text" name="AdditionalStops" placeholder="List any intermediate stops if applicable">
+                </div>
+                
                 <div class="form-group full-width">
                     <label>Special Instructions & Notes</label>
-                    <textarea name="Notes" rows="3" placeholder="Luggage details, flight numbers, or special accommodations..."></textarea>
+                    <textarea name="SpecialInstructions" rows="3" placeholder="Luggage details, flight numbers, or special accommodations..."></textarea>
                 </div>
+
                 <div class="form-group full-width">
                     <button type="submit" class="btn-gold" style="width: 100%; padding: 14px;">Submit Booking Request</button>
                     <p style="font-size: 0.75rem; color: #aaa; text-align: center; margin-top: 10px;">Submitting this request alerts our team to confirm your reservation and schedule your trip.</p>
